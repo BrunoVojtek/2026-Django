@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}O mne{% endblock %}</title>
+</head>
+<body>
+    <h1>Volam sa {{meno}}</h1>
+    <h2>Mam {{vek}} rokov</h2>
+    {% if vek >= 18 %}
+    <h3>Som dospely</h3>
+    {% else %}
+    <h3>Nie som dospely</h3>
+    {% endif %}
+    <h3>Moje hobby su:</h3>
+    <ul> 
+        {% for zaluba in zaluby %}
+        <li> {{zaluba}} </li>
+        {% empty %}
+        <li>Ziadne hobby</li>
+        {% endfor %} 
+    </ul>
+</body>
+</html>

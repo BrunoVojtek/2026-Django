@@ -1,3 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 
-# Create your views here.
+def ahoj(request):
+    return HttpResponse('<h1>Ahoj</h1>')
+
+def o_mne(request):
+    kontext = {
+        'meno':'Bruno',
+        'vek':17,
+        'zaluby':['programovanie', 'hudba', 'pivo']
+    }
+    return render(request,'ulohy/o_mne.html',kontext)
